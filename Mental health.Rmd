@@ -241,9 +241,11 @@ Where ŷ is the predicted value of mental health rank,  x1 is an indicator varia
 Null Hypothesis(H0) :  β1 = β2 = 0
 Alternative hypothesis(H1): at least one  βi ≠ 0, i = 1, ..., k
 
-$$\b_0= 1.464563 $$ shows that the predicted mental health level is 1.464563 when the respondent didn’t work last week and has 0 self-rated feeling of life score.
-$$\b_1= 0.076428 $$ in this model,  after effects of self-rated feeling of life score are taken into account,that mental health rank is 0.076428 higher when the respondents who worked last week as opposed to respondents who didn’t work last week.
-$$\b_2= 0.292423  $$ In this model,  for every unit increase in self-rated feeling of life score, the predicted mental health levels rank increased by 0.292423 when the respondent didn’t work last week.
+$$\hat{beta_0}= 1.464563 $$ shows that the predicted mental health level is 1.464563 when the respondent didn’t work last week and has 0 self-rated feeling of life score.
+
+$$\hat{beta_1}= 0.076428 $$ in this model,  after effects of self-rated feeling of life score are taken into account,that mental health rank is 0.076428 higher when the respondents who worked last week as opposed to respondents who didn’t work last week.
+
+$$\hat{beta_2}= 0.292423  $$ In this model,  for every unit increase in self-rated feeling of life score, the predicted mental health levels rank increased by 0.292423 when the respondent didn’t work last week.
 b1 has p-value 2e-05 while b2 has p-value 2e-16,both suggest that beta1 and beta 2 are needed in a model with all the other predictors included. We can reject our null hypothesis, two predictor variables in our model are significant predictors of a respondent’s mental health level. 
 	
 # Why is this Model Important?
@@ -277,4 +279,7 @@ The standard errors for the slopes of 0.018 (last week’s working status) and 0
 8. Yihui Xie (2020). knitr: A General-Purpose Package for Dynamic Report
 Generation in R. R package version 1.30.
 
+# Appendix
+Link to dataset and code used for the paper: https://github.com/rubytianxiaoma/STA304-PS3
 
+please refer to Mental health.Rmd for the code and target_nona.csv for dataset used
