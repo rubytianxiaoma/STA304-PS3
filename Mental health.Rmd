@@ -10,12 +10,12 @@ output:
 ---
 
 # Abstract
-In our research, we investigated the 2017 General Social Survey(GSS) on the family to deeply study the relationship between mental health and other two factors: self-rated feelings of life and recent working status. Because those two factors respectively represent both subjective and objective reasons that may affect people’s mental state. Our research discovered that both of those two factors positively correlated to their mental status. The better people feel about their lives, the better people rate their own mental status. And for people who have worked in the past week, the less likely they would have a low mental status quote as well. Such findings suggest that more entertainment and improving the working conditions for people may lower the number and proportion of people who suffer from mental problems. 
+In our research, we investigated the 2017 General Social Survey(GSS)[7] on the family to deeply study the relationship between mental health and other two factors: self-rated feelings of life and recent working status. Because those two factors respectively represent both subjective and objective reasons that may affect people’s mental state. Our research discovered that both of those two factors positively correlated to their mental status. The better people feel about their lives, the better people rate their own mental status. And for people who have worked in the past week, the less likely they would have a low mental status quote as well. Such findings suggest that more entertainment and improving the working conditions for people may lower the number and proportion of people who suffer from mental problems. 
 
 
 # Introduction
-Mental illness has always been a critical issue that bothers Canadians for a long period of time. In any given year, 1 in every 5 Canadians suffers from different mental illness or other mental problems. (Canadian Mental Health Association, 2016)[1]
-Mental health, in a broad sense, can be interpreted differently by different subjects such as psychology, biology, sociology and etc. Inside the GSS, Canadian government focused the issues mainly on social behaviour. Instead of studying the genetic and biological effects of mental problems, social interpretation highlights the external factors of adults in their daily life such as depression, anxiety, etc. Insomnia, distraction and etc are all the main minor outcomes as a result of mental illness.More seriously, Homicide is one of the worst outcomes of mental illness, in 2017 police reported 680 homicide cases across Canada, 48 more than in 2016. ( Allen, 2018)2 So it is essential for a responsible government to figure out a way to improve citizens’ mental health in order to reduce social turbulence.  
+Mental illness has always been a critical issue that bothers Canadians for a long period of time. In any given year, 1 in every 5 Canadians suffers from different mental illness or other mental problems. (Canadian Mental Health Association, 2016)[2]
+Mental health, in a broad sense, can be interpreted differently by different subjects such as psychology, biology, sociology and etc. Inside the GSS, Canadian government focused the issues mainly on social behaviour. Instead of studying the genetic and biological effects of mental problems, social interpretation highlights the external factors of adults in their daily life such as depression, anxiety, etc. Insomnia, distraction and etc are all the main minor outcomes as a result of mental illness.More seriously, Homicide is one of the worst outcomes of mental illness, in 2017 police reported 680 homicide cases across Canada, 48 more than in 2016. ( Allen, 2018)[1] So it is essential for a responsible government to figure out a way to improve citizens’ mental health in order to reduce social turbulence.  
  
 In the paper, we analyse the data from the GSS in the year of 2017. GSS is designed and introduced by the government of Canada in order to fully understand every aspect of daily life of people who are over 15 years old. After some filtering, we chose two main factors that would possibly affect people’s mental health the most to discuss: 1. Feelings of one’s life. As this factor is a comprehensive assessment of one’s depression, anxiety, happiness or just normality. 2. Recent working status. The reason for choosing this factor is because that working can provide people with basic needs and entertainment and it’s strongly correlated with one’s mood. From those,we can find out the correlations between each of the factors and give suggestions to the government on how to improve people’s mental state and help the Canadian society be more stable.
  
@@ -49,7 +49,7 @@ clean <- read_csv("target_nona.csv")
 
 ## Data
 
-Data originally adapted from the 2017 General Social Survey (GSS) on the Family.
+Data originally adapted from the 2017 General Social Survey (GSS) on the Family.[7]
 
 2017 GSS on Families is objective to gather data on social trends in order to monitor changes in the living conditions and well-being of Canadians over time; and, to provide information on specific current social policy issues or emerging interest.
 
@@ -81,7 +81,7 @@ kable(selected_table, caption="Table1: Variables in the Dataset used for the Mod
 #create colors for categorical variable, self_rated_mental_health
 c <- rainbow(6)
 c1 <- rainbow(6, alpha=0.4)
-##Relevel the labels to gain a better view
+#Relevel the labels to gain a better view
 clean$self_rated_mental_health <- factor(clean$self_rated_mental_health,levels = c("Poor", "Fair", "Good", "Very good", "Excellent","Don't know"))
 #draw bar plot shows distribution of self_rated_mental_health
 mental_plot <- 
@@ -241,9 +241,11 @@ Where ŷ is the predicted value of mental health rank,  x1 is an indicator varia
 Null Hypothesis(H0) :  β1 = β2 = 0
 Alternative hypothesis(H1): at least one  βi ≠ 0, i = 1, ..., k
 
-$$\b_0= 1.464563 $$ shows that the predicted mental health level is 1.464563 when the respondent didn’t work last week and has 0 self-rated feeling of life score.
-$$\b_1= 0.076428 $$ in this model,  after effects of self-rated feeling of life score are taken into account,that mental health rank is 0.076428 higher when the respondents who worked last week as opposed to respondents who didn’t work last week.
-$$\b_2= 0.292423  $$ In this model,  for every unit increase in self-rated feeling of life score, the predicted mental health levels rank increased by 0.292423 when the respondent didn’t work last week.
+$$\hat{beta_0}= 1.464563 $$ shows that the predicted mental health level is 1.464563 when the respondent didn’t work last week and has 0 self-rated feeling of life score.
+
+$$\hat{beta_1}= 0.076428 $$ in this model,  after effects of self-rated feeling of life score are taken into account,that mental health rank is 0.076428 higher when the respondents who worked last week as opposed to respondents who didn’t work last week.
+
+$$\hat{beta_2}= 0.292423  $$ In this model,  for every unit increase in self-rated feeling of life score, the predicted mental health levels rank increased by 0.292423 when the respondent didn’t work last week.
 b1 has p-value 2e-05 while b2 has p-value 2e-16,both suggest that beta1 and beta 2 are needed in a model with all the other predictors included. We can reject our null hypothesis, two predictor variables in our model are significant predictors of a respondent’s mental health level. 
 	
 # Why is this Model Important?
@@ -277,4 +279,7 @@ The standard errors for the slopes of 0.018 (last week’s working status) and 0
 8. Yihui Xie (2020). knitr: A General-Purpose Package for Dynamic Report
 Generation in R. R package version 1.30.
 
+# Appendix
+Link to dataset and code used for the paper: https://github.com/rubytianxiaoma/STA304-PS3
 
+please refer to Mental health.Rmd for the code and target_nona.csv for dataset used
